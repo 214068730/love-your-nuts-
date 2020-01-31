@@ -15,8 +15,8 @@ public class UserRoles
 	@GeneratedValue
 	private Long userRoleId;
 	
-	@OneToOne
-	@JoinColumn(name = "email", referencedColumnName= "email")
+//	@OneToOne
+//	@JoinColumn(name = "userEmail", referencedColumnName= "userEmail")
 	private User email;
 	private String role;
 	
