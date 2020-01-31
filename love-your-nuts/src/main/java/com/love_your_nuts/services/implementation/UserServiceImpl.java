@@ -61,8 +61,50 @@ public class UserServiceImpl implements UserService{
 	public List<User> readAll() {
 		return repository.findAll();
 	}
-
 	
-
+	@Override
+	public List<User> findByFirstName(String name) 
+	{
+		List<User> user = repository.findByFirstName(name);
+		
+		if (user != null && !user.isEmpty()) 
+		{
+			return user;
+		}
+		else 
+		{
+			return null;
+		}
+	}
+	
+	@Override
+	public List<User> findByLastName(String name) 
+	{
+		List<User> user = repository.findByLastName(name);
+		
+		if (user != null && !user.isEmpty()) 
+		{
+			return user;
+		}
+		else 
+		{
+			return null;
+		}
+	}
+	
+	@Override
+	public User findByEmail(String email) 
+	{
+		User user=  repository.findByEmail(email);
+		
+		if (email != null) 
+		{
+			return user;
+		}
+		else 
+		{
+			return null;	
+		}
+	}
 	
 }
