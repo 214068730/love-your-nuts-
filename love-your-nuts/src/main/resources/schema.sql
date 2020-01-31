@@ -12,4 +12,5 @@ CREATE TABLE user (
 	userLastName VARCHAR(250) NOT NULL,
 	userEmail VARCHAR(250) NOT NULL,
 	userAge INT NOT NULL,
+	userStory VARCHAR(250) NOT NULL
 );

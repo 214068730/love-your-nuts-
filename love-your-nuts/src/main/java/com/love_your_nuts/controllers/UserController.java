@@ -70,4 +70,26 @@ public class UserController {
 		return service.findById(id);
 	}
 	
+	// find by email
+	@RequestMapping(value = "email/{email}", method = RequestMethod.GET)
+	public User findByEmail(@PathVariable String email) 
+	{
+		return service.findByEmail(email);
+	}
+
+	// find by Firstname
+	@RequestMapping(value = "firstName/{name}", method = RequestMethod.GET)
+	public List<User> findByFirstName(@PathVariable String name) 
+	{
+		return service.findByFirstName(name);
+	}
+	
+	// find by Lastname
+	@RequestMapping(value = "LastName/{name}", method = RequestMethod.GET)
+	public List<User> findByLastName(@PathVariable String name) 
+	{
+		return service.findByLastName(name);
+	}
+
+	
 }
