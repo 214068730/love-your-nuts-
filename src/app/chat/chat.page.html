@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-button (click)="sendMessage()" size="small">Send Message</ion-button>
+</ion-header>
+
+<ion-content>
+  
+  <label class="item item-input item-stacked-label">
+    <span class="cloned-text-input">
+        <ion-textarea class="chat" style="min-height:100px; overflow:scroll;resize:none ; position:relative;  -moz-user-select: text !important; -webkit-user-select: text !important;-ms-user-select: text !important; "readonly="true" ></ion-textarea>
+    </span>
+  </label>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button  (click)="navigate()">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+  
+    
+      <ion-tab-button class="tab-item-active">
+        <ion-icon name="contacts"></ion-icon>
+        <ion-label>Chat Log</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button >
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  
+</ion-content>
+
+

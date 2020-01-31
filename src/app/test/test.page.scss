@@ -1,0 +1,43 @@
+.ion-content {
+    --background: none;
+    background-image: url('../../assets/pexels-photo-430208.jpeg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+
+.buttons:before {
+   // background-color:red($color: #000000);
+   // color: white;
+    //text-align: center;
+    font-size: 100px;
+   // margin: 4px 2px;
+    content: ' \30CF';
+    //cursor: pointer;
+    
+  }
+
+
+.button-panic {
+    background: #bf9494;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    font-size: 35px;
+}
+
+.tab-item-active {
+    background : #d3d3d3;
+} 
+
+
