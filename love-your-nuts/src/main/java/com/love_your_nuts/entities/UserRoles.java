@@ -15,9 +15,8 @@ public class UserRoles
 	@GeneratedValue
 	private Long userRoleId;
 	
-	@OneToOne//(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-//	@JoinColumn(name = "email", nullable = false, referencedColumnName= "email")
-	@JoinColumn(name = "email", referencedColumnName= "email")
+//	@OneToOne
+//	@JoinColumn(name = "userEmail", referencedColumnName= "userEmail")
 	private User email;
 	private String role;
 	
