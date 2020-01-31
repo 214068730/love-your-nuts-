@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const devMode = process.env.NODE_ENV !== 'production'
 const defaultConfig = {
   devServer: {
+    historyApiFallback: true,
     contentBase: './build',
     port: 3000
   },
@@ -68,7 +69,7 @@ const defaultConfig = {
 module.exports = [{
   ...defaultConfig,
   entry: {
-    chatWidget: ['@babel/polyfill', './src/chatForum.js']
+    App: ['@babel/polyfill', './src/App.js']
   },
   output: {
     path: path.join(__dirname, '/build'),

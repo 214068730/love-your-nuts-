@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef, Fragment } from 'react'
 
-import ReactDOM from 'react-dom'
-import axios from 'axios'
 import './assets/css/app.scss'
 import * as SockJs from 'sockjs-client'
 import * as Stomp from 'stompjs'
@@ -30,7 +28,7 @@ const ChatForum = () => {
     <> 
     {messages.map((message, index) => (
         <div key={index}>
-          <p> {message}</p>
+          <p><a href={`/profiles/${message.slice(0, message.indexOf(':'))}`}>{message.slice(0, message.indexOf(':'))}</a> {message.slice(message.indexOf(':'))}</p>
         </div>
     ))}
 
@@ -46,4 +44,4 @@ const ChatForum = () => {
   )
 }
 
-ReactDOM.render(<ChatForum />, document.getElementById('chatForumWidget'))
+export default ChatForum
