@@ -1,5 +1,8 @@
 package com.love_your_nuts.services;
 
-public class UserRolesService {
+import com.love_your_nuts.entities.UserRoles;
 
+public interface UserRolesService extends Service<UserRoles, Long>
+{	
+	UserRoles findByEmail(String user);
 }
