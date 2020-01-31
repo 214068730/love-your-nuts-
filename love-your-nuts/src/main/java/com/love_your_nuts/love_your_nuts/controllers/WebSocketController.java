@@ -20,7 +20,7 @@ public class WebSocketController {
 	@MessageMapping("/send/message")
 	public void onReceivedMessages(String message) {
 		System.out.println("INCOMING...");
-		this.template.convertAndSend("/chat", generateMessage());
+		this.template.convertAndSend("/chat", message);
 	}
 	
      private String generateMessage() {
