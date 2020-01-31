@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useRef, Fragment } from 'react'
+import React, { useEffect } from 'react'
 
-const Profile = () => {
+const Profile = (props) => {
   useEffect(() => {
+
   }, [])
 
   return (
     <>
-      <div> Name!</div>
+      <img src='https://pbs.twimg.com/profile_images/914451216687681536/KB9O1oqf_400x400.jpg' />
+      <div> Name: {props.match.params.user}</div>
     </>
   )
 }
