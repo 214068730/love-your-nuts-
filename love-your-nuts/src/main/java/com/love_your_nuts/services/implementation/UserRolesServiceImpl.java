@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.love_your_nuts.entities.UserRoles;
-import com.love_your_nuts.repositories.UserRolesRepo;
+import com.love_your_nuts.repositories.repoInterface.UserRolesRepo;
 import com.love_your_nuts.services.UserRolesService;
 
 @Service
