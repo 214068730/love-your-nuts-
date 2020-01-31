@@ -68,7 +68,7 @@ const defaultConfig = {
 module.exports = [{
   ...defaultConfig,
   entry: {
-    soccerWidget: ['@babel/polyfill', './src/soccerWidget.js']
+    chatWidget: ['@babel/polyfill', './src/chatForum.js']
   },
   output: {
     path: path.join(__dirname, '/build'),
