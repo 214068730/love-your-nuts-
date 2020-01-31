@@ -16,14 +16,34 @@ public class User {
 	@GeneratedValue
 	private Long sessionId;
 	
-	private String userFirstName,userLastName,userEmail;
+	private String userFirstName,userLastName,userEmail, userStory;
 	private int userAge;
 	
+	public User() {
+	}
+	
+	public User(Integer userId, Long sessionId, String userFirstName, String userLastName, String userEmail,
+			String userStory, int userAge) {
+		super();
+		this.userId = userId;
+		this.sessionId = sessionId;
+		this.userFirstName = userFirstName;
+		this.userLastName = userLastName;
+		this.userEmail = userEmail;
+		this.userStory = userStory;
+		this.userAge = userAge;
+	}
 	public Integer getUserId() {
 		return userId;
 	}
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+	public Long getSessionId() {
+		return sessionId;
+	}
+	public void setSessionId(Long sessionId) {
+		this.sessionId = sessionId;
 	}
 	public String getUserFirstName() {
 		return userFirstName;
@@ -43,23 +63,26 @@ public class User {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
+	public String getUserStory() {
+		return userStory;
+	}
+	public void setUserStory(String userStory) {
+		this.userStory = userStory;
+	}
 	public int getUserAge() {
 		return userAge;
 	}
 	public void setUserAge(int userAge) {
 		this.userAge = userAge;
 	}
-	public Long getSessionId() {
-		return sessionId;
-	}
-	public void setSessionId(Long sessionId) {
-		this.sessionId = sessionId;
-	}
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userFirstName=" + userFirstName + ", userLastName=" + userLastName
-				+ ", userEmail=" + userEmail + ", userAge=" + userAge + "]";
+		return "User [userId=" + userId + ", sessionId=" + sessionId + ", userFirstName=" + userFirstName
+				+ ", userLastName=" + userLastName + ", userEmail=" + userEmail + ", userStory=" + userStory
+				+ ", userAge=" + userAge + "]";
 	}
+	
+	
 	
 	
 	
