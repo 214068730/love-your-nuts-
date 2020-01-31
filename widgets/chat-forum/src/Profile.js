@@ -13,6 +13,11 @@ const Profile = (props) => {
       <br />
       <div> This is my story: 
         I was a happy health nutter and then BOOM. Went to the doc. Met the nuts guys. They helped me big time. I am still alive</div>
+      <br />
+      <br />
+      <div>
+        Click <a href="/private/chat">here </a>to chat with me privately
+      </div>
     </>
   )
 }
