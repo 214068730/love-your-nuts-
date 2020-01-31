@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS user_roles;
+DROP TABLE IF EXISTS user;
+  
+CREATE TABLE user_roles (
+  email VARCHAR(250) NOT NULL,
+  role VARCHAR(250) NOT NULL
+);
+
+CREATE TABLE user (
+	userId INT AUTO_INCREMENT  PRIMARY KEY,
+	userFirstName VARCHAR(250) NOT NULL,
+	userLastName VARCHAR(250) NOT NULL,
+	userEmail VARCHAR(250) NOT NULL,
+	userAge INT NOT NULL,
+);

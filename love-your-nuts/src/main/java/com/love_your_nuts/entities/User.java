@@ -12,6 +12,10 @@ public class User {
 	@Id
 	@GeneratedValue
 	private Integer userId;
+	
+	@GeneratedValue
+	private Long sessionId;
+	
 	private String userFirstName,userLastName,userEmail;
 	private int userAge;
 	
@@ -44,6 +48,12 @@ public class User {
 	}
 	public void setUserAge(int userAge) {
 		this.userAge = userAge;
+	}
+	public Long getSessionId() {
+		return sessionId;
+	}
+	public void setSessionId(Long sessionId) {
+		this.sessionId = sessionId;
 	}
 	@Override
 	public String toString() {
