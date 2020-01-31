@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+@import url("/assets/css/scaffolding/_modern-normalize");
+
+// Colours
+$white: #FFF;
+$black: #000;
+$grey: #999;
+$ltgrey: #F0F0F0;
+$red: #B41400;
+$green: #019036;
+
+// REM sizing
+@mixin rem($property, $values) {
+    $n: length($values);
+    $i: 1;
+    $browser-context: 16;
+    $pxlist: ();
+    $remlist: ();
+    @while $i <=$n {
+        $itemVal: (nth($values, $i));
+        @if $itemVal != "auto" {
+            $pxlist: append($pxlist, $itemVal + px);
+            $remlist: append($remlist, ($itemVal / $browser-context) + rem);
+        }
+        @else {
+            $pxlist: append($pxlist, auto);
+            $remlist: append($remlist, auto);
+        }
+        $i: $i + 1;
+    }
+    #{$property}: $pxlist;
+    #{$property}: $remlist;
+}
+
+// Clearfix
+@mixin clearfix {
+    &:after,
+    &:before {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// Transition
+@mixin trans($type: all, $style: linear, $time: .3s) {
+    -webkit-transition: $type $style $time;
+       -moz-transition: $type $style $time;
+    	-ms-transition: $type $style $time;
+    	 -o-transition: $type $style $time;
+        	transition: $type $style $time;
+}
+
+// Soccer Widget
+
+body {
+  background: #f1f1f1;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.dots {
+  width: 3.5em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.dots div {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background-color: #b41400;
+  animation: fade 0.8s ease-in-out alternate infinite;
+}
+
+.dots div:nth-of-type(1) {
+  animation-delay: -0.4s;
+}
+
+.dots div:nth-of-type(2) {
+  animation-delay: -0.2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.scroller {
+  overflow: auto;
+  width: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  max-width: 970px;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.soccer-widget {
+  margin: 0;
+  margin-right: 10px;
+  min-width: calc(100% - 20px);
+  line-height: 1.2;
+  background: $white;
+  position: relative;
+  padding-bottom: 47px;
+  @media screen and (min-width: 768px) {
+    margin-right: 20px;
+    min-width: calc((100% - 20px) / 2);
+  }
+  h3 {
+    font-weight: 300;
+    @include rem('font-size', 18);
+    margin: 15px 0 0;
+    text-align: center;
+    + p {
+      color: $grey;
+      @include rem('font-size', 14);
+      text-align: center;
+      margin: 0 0 15px;
+    }
+  }
+}
+
+.soccer-widget img{
+  width: 100px;
+}
+
+.inner {
+  border-top: 1px solid $ltgrey;
+  padding: 15px;
+  @include clearfix;
+  display: flex;
+  &:first-of-type {
+    justify-content: center;
+    align-items: center;
+  }
+  &:last-of-type {
+    strong {
+      margin-right: 5px;
+    }
+  }
+}
+
+.ref{
+  border:1px dashed red;
+  min-height: 60px;
+}
+
+.third {
+  width: calc(100% / 3);
+  text-align: center;
+  @include rem('font-size', 12);
+  img {
+    margin-bottom: 5px;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+  }
+}
+
+.half {
+  width: calc(100% / 2);
+  @include rem('font-size', 14);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.score {
+  span {
+    display: block;
+    &:first-of-type {
+      color: $green;
+      @include rem('font-size', 34);
+    }
+    &:nth-of-type(2) {
+      margin: 5px 0;
+      color: $grey;
+    }
+    &.red-text {
+      margin: 5px 0 0;
+      color: $red;
+      @include rem('font-size', 14);
+      text-transform: uppercase;
+    }
+  }
+}
+
+small {
+  @include rem('font-size', 14);
+  display: block;
+}
+
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 20px);
+  display: block;
+}
